@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Simulera titrering &#8211; Kemiprogram</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Kemiprogram &raquo; Feed" href="https://bognic.github.io/kemiprogram/feed/">
+<link rel="alternate" type="application/rss+xml" title="Kemiprogram &raquo; Comments Feed" href="https://bognic.github.io/kemiprogram/comments/feed/">
+<link rel="stylesheet" id="wp-block-library-css" href="https://bognic.github.io/kemiprogram/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1" media="all">
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--palette-color-1: #2872fa;--wp--preset--color--palette-color-2: #1559ed;--wp--preset--color--palette-color-3: #3A4F66;--wp--preset--color--palette-color-4: #192a3d;--wp--preset--color--palette-color-5: #e1e8ed;--wp--preset--color--palette-color-6: #f2f5f7;--wp--preset--color--palette-color-7: #FAFBFC;--wp--preset--color--palette-color-8: #ffffff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--juicy-peach: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);--wp--preset--gradient--young-passion: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);--wp--preset--gradient--true-sunset: linear-gradient(to right, #fa709a 0%, #fee140 100%);--wp--preset--gradient--morpheus-den: linear-gradient(to top, #30cfd0 0%, #330867 100%);--wp--preset--gradient--plum-plate: linear-gradient(135deg, #667eea 0%, #764ba2 100%);--wp--preset--gradient--aqua-splash: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);--wp--preset--gradient--love-kiss: linear-gradient(to top, #ff0844 0%, #ffb199 100%);--wp--preset--gradient--new-retrowave: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);--wp--preset--gradient--plum-bath: linear-gradient(to top, #cc208e 0%, #6713d2 100%);--wp--preset--gradient--high-flight: linear-gradient(to right, #0acffe 0%, #495aff 100%);--wp--preset--gradient--teen-party: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);--wp--preset--gradient--fabled-sunset: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);--wp--preset--gradient--arielle-smile: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);--wp--preset--gradient--itmeo-branding: linear-gradient(180deg, #2af598 0%, #009efd 100%);--wp--preset--gradient--deep-blue: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);--wp--preset--gradient--strong-bliss: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);--wp--preset--gradient--sweet-period: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);--wp--preset--gradient--purple-division: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);--wp--preset--gradient--cold-evening: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);--wp--preset--gradient--mountain-rock: linear-gradient(to right, #868f96 0%, #596164 100%);--wp--preset--gradient--desert-hump: linear-gradient(to top, #c79081 0%, #dfa579 100%);--wp--preset--gradient--ethernal-constance: linear-gradient(to top, #09203f 0%, #537895 100%);--wp--preset--gradient--happy-memories: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);--wp--preset--gradient--grown-early: linear-gradient(to top, #0ba360 0%, #3cba92 100%);--wp--preset--gradient--morning-salad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);--wp--preset--gradient--night-call: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);--wp--preset--gradient--mind-crawl: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);--wp--preset--gradient--angel-care: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);--wp--preset--gradient--juicy-cake: linear-gradient(to top, #e14fad 0%, #f9d423 100%);--wp--preset--gradient--rich-metal: linear-gradient(to right, #d7d2cc 0%, #304352 100%);--wp--preset--gradient--mole-hall: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);--wp--preset--gradient--cloudy-knoxville: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);--wp--preset--gradient--soft-grass: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);--wp--preset--gradient--saint-petersburg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);--wp--preset--gradient--everlasting-sky: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);--wp--preset--gradient--kind-steel: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);--wp--preset--gradient--over-sun: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);--wp--preset--gradient--premium-white: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);--wp--preset--gradient--clean-mirror: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);--wp--preset--gradient--wild-apple: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);--wp--preset--gradient--snow-again: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);--wp--preset--gradient--confident-cloud: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);--wp--preset--gradient--glass-water: linear-gradient(to top, #dfe9f3 0%, white 100%);--wp--preset--gradient--perfect-white: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}body { margin: 0;--wp--style--global--content-size: var(--block-max-width);--wp--style--global--wide-size: var(--block-wide-max-width); }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }.wp-site-blocks > * + * { margin-block-start: var(--content-spacing); }body { --wp--style--block-gap: var(--content-spacing); }body .is-layout-flow > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-flow > * + *{margin-block-start: var(--content-spacing);margin-block-end: 0;}body .is-layout-constrained > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-constrained > * + *{margin-block-start: var(--content-spacing);margin-block-end: 0;}body .is-layout-flex{gap: var(--content-spacing);}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-color{color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-color{color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-color{color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-color{color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-color{color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-color{color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-color{color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-color{color: var(--wp--preset--color--palette-color-8) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-background-color{background-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-background-color{background-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-background-color{background-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-background-color{background-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-background-color{background-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-background-color{background-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-background-color{background-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-background-color{background-color: var(--wp--preset--color--palette-color-8) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-palette-color-1-border-color{border-color: var(--wp--preset--color--palette-color-1) !important;}.has-palette-color-2-border-color{border-color: var(--wp--preset--color--palette-color-2) !important;}.has-palette-color-3-border-color{border-color: var(--wp--preset--color--palette-color-3) !important;}.has-palette-color-4-border-color{border-color: var(--wp--preset--color--palette-color-4) !important;}.has-palette-color-5-border-color{border-color: var(--wp--preset--color--palette-color-5) !important;}.has-palette-color-6-border-color{border-color: var(--wp--preset--color--palette-color-6) !important;}.has-palette-color-7-border-color{border-color: var(--wp--preset--color--palette-color-7) !important;}.has-palette-color-8-border-color{border-color: var(--wp--preset--color--palette-color-8) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-juicy-peach-gradient-background{background: var(--wp--preset--gradient--juicy-peach) !important;}.has-young-passion-gradient-background{background: var(--wp--preset--gradient--young-passion) !important;}.has-true-sunset-gradient-background{background: var(--wp--preset--gradient--true-sunset) !important;}.has-morpheus-den-gradient-background{background: var(--wp--preset--gradient--morpheus-den) !important;}.has-plum-plate-gradient-background{background: var(--wp--preset--gradient--plum-plate) !important;}.has-aqua-splash-gradient-background{background: var(--wp--preset--gradient--aqua-splash) !important;}.has-love-kiss-gradient-background{background: var(--wp--preset--gradient--love-kiss) !important;}.has-new-retrowave-gradient-background{background: var(--wp--preset--gradient--new-retrowave) !important;}.has-plum-bath-gradient-background{background: var(--wp--preset--gradient--plum-bath) !important;}.has-high-flight-gradient-background{background: var(--wp--preset--gradient--high-flight) !important;}.has-teen-party-gradient-background{background: var(--wp--preset--gradient--teen-party) !important;}.has-fabled-sunset-gradient-background{background: var(--wp--preset--gradient--fabled-sunset) !important;}.has-arielle-smile-gradient-background{background: var(--wp--preset--gradient--arielle-smile) !important;}.has-itmeo-branding-gradient-background{background: var(--wp--preset--gradient--itmeo-branding) !important;}.has-deep-blue-gradient-background{background: var(--wp--preset--gradient--deep-blue) !important;}.has-strong-bliss-gradient-background{background: var(--wp--preset--gradient--strong-bliss) !important;}.has-sweet-period-gradient-background{background: var(--wp--preset--gradient--sweet-period) !important;}.has-purple-division-gradient-background{background: var(--wp--preset--gradient--purple-division) !important;}.has-cold-evening-gradient-background{background: var(--wp--preset--gradient--cold-evening) !important;}.has-mountain-rock-gradient-background{background: var(--wp--preset--gradient--mountain-rock) !important;}.has-desert-hump-gradient-background{background: var(--wp--preset--gradient--desert-hump) !important;}.has-ethernal-constance-gradient-background{background: var(--wp--preset--gradient--ethernal-constance) !important;}.has-happy-memories-gradient-background{background: var(--wp--preset--gradient--happy-memories) !important;}.has-grown-early-gradient-background{background: var(--wp--preset--gradient--grown-early) !important;}.has-morning-salad-gradient-background{background: var(--wp--preset--gradient--morning-salad) !important;}.has-night-call-gradient-background{background: var(--wp--preset--gradient--night-call) !important;}.has-mind-crawl-gradient-background{background: var(--wp--preset--gradient--mind-crawl) !important;}.has-angel-care-gradient-background{background: var(--wp--preset--gradient--angel-care) !important;}.has-juicy-cake-gradient-background{background: var(--wp--preset--gradient--juicy-cake) !important;}.has-rich-metal-gradient-background{background: var(--wp--preset--gradient--rich-metal) !important;}.has-mole-hall-gradient-background{background: var(--wp--preset--gradient--mole-hall) !important;}.has-cloudy-knoxville-gradient-background{background: var(--wp--preset--gradient--cloudy-knoxville) !important;}.has-soft-grass-gradient-background{background: var(--wp--preset--gradient--soft-grass) !important;}.has-saint-petersburg-gradient-background{background: var(--wp--preset--gradient--saint-petersburg) !important;}.has-everlasting-sky-gradient-background{background: var(--wp--preset--gradient--everlasting-sky) !important;}.has-kind-steel-gradient-background{background: var(--wp--preset--gradient--kind-steel) !important;}.has-over-sun-gradient-background{background: var(--wp--preset--gradient--over-sun) !important;}.has-premium-white-gradient-background{background: var(--wp--preset--gradient--premium-white) !important;}.has-clean-mirror-gradient-background{background: var(--wp--preset--gradient--clean-mirror) !important;}.has-wild-apple-gradient-background{background: var(--wp--preset--gradient--wild-apple) !important;}.has-snow-again-gradient-background{background: var(--wp--preset--gradient--snow-again) !important;}.has-confident-cloud-gradient-background{background: var(--wp--preset--gradient--confident-cloud) !important;}.has-glass-water-gradient-background{background: var(--wp--preset--gradient--glass-water) !important;}.has-perfect-white-gradient-background{background: var(--wp--preset--gradient--perfect-white) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="blocksy-fonts-font-source-google-css" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&#038;display=swap" media="all">
+<link rel="stylesheet" id="ct-main-styles-css" href="https://bognic.github.io/kemiprogram/wp-content/themes/blocksy/static/bundle/main.min.css?ver=1.8.61" media="all">
+<link rel="stylesheet" id="ct-page-title-styles-css" href="https://bognic.github.io/kemiprogram/wp-content/themes/blocksy/static/bundle/page-title.min.css?ver=1.8.61" media="all">
+<link rel="https://api.w.org/" href="https://bognic.github.io/kemiprogram/wp-json/">
+<link rel="alternate" type="application/json" href="https://bognic.github.io/kemiprogram/wp-json/wp/v2/pages/38">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bognic.github.io/kemiprogram/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bognic.github.io/kemiprogram/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="https://bognic.github.io/kemiprogram/simulera-titrering/">
+<link rel="shortlink" href="https://bognic.github.io/kemiprogram/?p=38">
+<link rel="alternate" type="application/json+oembed" href="https://bognic.github.io/kemiprogram/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbognic.github.io%2Fkemiprogram%2Fsimulera-titrering%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://bognic.github.io/kemiprogram/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbognic.github.io%2Fkemiprogram%2Fsimulera-titrering%2F&#038;format=xml">
+<noscript><link rel="stylesheet" href="https://bognic.github.io/kemiprogram/wp-content/themes/blocksy/static/bundle/no-scripts.min.css" type="text/css"></noscript>
+<style id="ct-main-styles-inline-css">[data-header*="type-1"] .ct-header [data-id="logo"] .site-logo-container {--logo-max-height:63px;} [data-header*="type-1"] .ct-header [data-id="logo"] .site-title {--fontWeight:700;--fontSize:25px;--lineHeight:1.5;--linkInitialColor:#ffffff;} [data-header*="type-1"] .ct-header [data-id="logo"] {--horizontal-alignment:left;} [data-header*="type-1"] .ct-header [data-id="menu-secondary"] > ul > li > a {--fontWeight:700;--textTransform:none;--fontSize:18px;--lineHeight:1.3;--linkInitialColor:#ffffff;} [data-header*="type-1"] .ct-header [data-id="menu-secondary"][data-menu*="type-3"] > ul > li > a {--linkHoverColor:#ffffff;--linkActiveColor:#ffffff;} [data-header*="type-1"] .ct-header [data-id="menu-secondary"] .sub-menu {--linkInitialColor:#ffffff;--fontWeight:500;--fontSize:16px;--dropdown-divider:1px solid rgba(255, 255, 255, 0.1);--box-shadow:0px 10px 20px rgba(41, 51, 61, 0.1);--border-radius:0px 0px 2px 2px;} [data-header*="type-1"] .ct-header [data-row*="middle"] {--height:100px;background-color:var(--paletteColor3);background-image:none;--borderTop:none;--borderBottom:none;--box-shadow:none;} [data-header*="type-1"] .ct-header [data-row*="middle"] > div {--borderTop:none;--borderBottom:none;} [data-header*="type-1"] [data-id="mobile-menu"] {--items-vertical-spacing:5px;--fontWeight:700;--fontSize:20px;--linkInitialColor:#ffffff;--mobile-menu-divider:none;} [data-header*="type-1"] #offcanvas .ct-panel-inner {background-color:rgba(18, 21, 25, 0.98);} [data-header*="type-1"] #offcanvas {--side-panel-width:500px;} [data-header*="type-1"] [data-behaviour*="side"] {--box-shadow:0px 0px 70px rgba(0, 0, 0, 0.35);} [data-header*="type-1"] #offcanvas .ct-toggle-close {--icon-size:16px;} [data-header*="type-1"] [data-id="trigger"] {--icon-size:18px;} [data-header*="type-1"] [data-id="trigger"] .ct-label {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;} [data-header*="type-1"] {--header-height:100px;} [data-footer*="type-1"] .ct-footer [data-row*="bottom"] > div {--container-spacing:25px;--border:none;--border-top:none;--border-bottom:none;--grid-template-columns:initial;} [data-footer*="type-1"] .ct-footer [data-row*="bottom"] .widget-title {--fontSize:16px;} [data-footer*="type-1"] .ct-footer [data-row*="bottom"] {--border-top:none;--border-bottom:none;background-color:var(--paletteColor3);} [data-footer*="type-1"] [data-id="copyright"] {--fontWeight:400;--fontSize:15px;--lineHeight:1.3;--color:var(--paletteColor6);} [data-footer*="type-1"] [data-column="copyright"] {--horizontal-alignment:center;} [data-footer*="type-1"] .ct-footer [data-row*="middle"] > div {--container-spacing:20px;--border:none;--border-top:none;--border-bottom:none;--grid-template-columns:repeat(2, 1fr);} [data-footer*="type-1"] .ct-footer [data-row*="middle"] .widget-title {--fontSize:16px;} [data-footer*="type-1"] .ct-footer [data-row*="middle"] {--border-top:none;--border-bottom:none;background-color:var(--paletteColor3);} [data-footer*="type-1"] .ct-footer [data-column="widget-area-1"] {--text-horizontal-alignment:center;--horizontal-alignment:center;} [data-footer*="type-1"] .ct-footer [data-column="widget-area-2"] {--text-horizontal-alignment:center;--horizontal-alignment:center;} [data-footer*="type-1"][data-footer*="reveal"] .site-main {--footer-box-shadow:0px 30px 50px rgba(0, 0, 0, 0.1);} [data-footer*="type-1"] footer.ct-footer {background-color:var(--paletteColor6);}:root {--fontFamily:Quicksand, Sans-Serif;--fontWeight:400;--textTransform:none;--textDecoration:none;--fontSize:18px;--lineHeight:1.65;--letterSpacing:0em;--buttonFontWeight:500;--buttonFontSize:15px;--has-classic-forms:var(--true);--has-modern-forms:var(--false);--form-field-border-initial-color:var(--border-color);--form-field-border-focus-color:var(--paletteColor1);--form-selection-control-initial-color:var(--border-color);--form-selection-control-accent-color:var(--paletteColor1);--paletteColor1:#2872fa;--paletteColor2:#1559ed;--paletteColor3:#3A4F66;--paletteColor4:#192a3d;--paletteColor5:#e1e8ed;--paletteColor6:#f2f5f7;--paletteColor7:#FAFBFC;--paletteColor8:#ffffff;--color:var(--paletteColor3);--linkInitialColor:var(--paletteColor1);--linkHoverColor:var(--paletteColor2);--selectionTextColor:#ffffff;--selectionBackgroundColor:var(--paletteColor1);--border-color:var(--paletteColor5);--headings-color:var(--paletteColor4);--content-spacing:1.5em;--buttonMinHeight:40px;--buttonShadow:none;--buttonTransform:none;--buttonTextInitialColor:#ffffff;--buttonTextHoverColor:#ffffff;--buttonInitialColor:var(--paletteColor1);--buttonHoverColor:var(--paletteColor2);--button-border:none;--buttonBorderRadius:3px;--button-padding:5px 20px;--normal-container-max-width:1290px;--content-vertical-spacing:30px;--narrow-container-max-width:750px;--wide-offset:130px;}h1 {--fontWeight:700;--fontSize:40px;--lineHeight:1.5;}h2 {--fontWeight:700;--fontSize:35px;--lineHeight:1.5;}h3 {--fontWeight:700;--textTransform:none;--textDecoration:none;--fontSize:30px;--lineHeight:1.5;}h4 {--fontWeight:700;--fontSize:25px;--lineHeight:1.5;}h5 {--fontWeight:700;--fontSize:20px;--lineHeight:1.5;}h6 {--fontWeight:700;--fontSize:16px;--lineHeight:1.5;}.wp-block-quote.is-style-large p, .wp-block-pullquote p, .ct-quote-widget blockquote {--fontFamily:Georgia;--fontWeight:600;--fontSize:25px;}code, kbd, samp, pre {--fontFamily:monospace;--fontWeight:400;--fontSize:16px;}.ct-sidebar .widget-title {--fontSize:18px;}.ct-breadcrumbs {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;}body {background-color:var(--paletteColor7);} [data-prefix="single_blog_post"] .entry-header .page-title {--fontSize:30px;} [data-prefix="single_blog_post"] .entry-header .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;--lineHeight:1.3;} [data-prefix="categories"] .entry-header .page-title {--fontSize:30px;} [data-prefix="categories"] .entry-header .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;--lineHeight:1.3;} [data-prefix="search"] .entry-header .page-title {--fontSize:30px;} [data-prefix="search"] .entry-header .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;--lineHeight:1.3;} [data-prefix="author"] .entry-header .page-title {--fontSize:30px;} [data-prefix="author"] .entry-header .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;--lineHeight:1.3;} [data-prefix="author"] .hero-section[data-type="type-2"] {background-color:var(--paletteColor6);background-image:none;--container-padding:50px 0;} [data-prefix="single_page"] .entry-header .page-title {--fontSize:30px;} [data-prefix="single_page"] .entry-header .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;--lineHeight:1.3;} [data-prefix="single_page"] .hero-section[data-type="type-1"] {--alignment:center;} [data-prefix="blog"] .entry-card .entry-title {--fontSize:20px;--lineHeight:1.3;} [data-prefix="blog"] .entry-card .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;} [data-prefix="blog"] .entry-card {background-color:var(--paletteColor8);--box-shadow:0px 12px 18px -6px rgba(34, 56, 101, 0.04);} [data-prefix="categories"] .entries {--grid-template-columns:repeat(3, minmax(0, 1fr));} [data-prefix="categories"] .entry-card .entry-title {--fontSize:20px;--lineHeight:1.3;} [data-prefix="categories"] .entry-card .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;} [data-prefix="categories"] .entry-card {background-color:var(--paletteColor8);--box-shadow:0px 12px 18px -6px rgba(34, 56, 101, 0.04);} [data-prefix="author"] .entries {--grid-template-columns:repeat(3, minmax(0, 1fr));} [data-prefix="author"] .entry-card .entry-title {--fontSize:20px;--lineHeight:1.3;} [data-prefix="author"] .entry-card .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;} [data-prefix="author"] .entry-card {background-color:var(--paletteColor8);--box-shadow:0px 12px 18px -6px rgba(34, 56, 101, 0.04);} [data-prefix="search"] .entries {--grid-template-columns:repeat(3, minmax(0, 1fr));} [data-prefix="search"] .entry-card .entry-title {--fontSize:20px;--lineHeight:1.3;} [data-prefix="search"] .entry-card .entry-meta {--fontWeight:600;--textTransform:uppercase;--fontSize:12px;} [data-prefix="search"] .entry-card {background-color:var(--paletteColor8);--box-shadow:0px 12px 18px -6px rgba(34, 56, 101, 0.04);}form textarea {--form-field-height:170px;}.ct-sidebar {--linkInitialColor:var(--color);} [data-prefix="single_blog_post"] [class*="ct-container"] > article[class*="post"] {--has-boxed:var(--false);--has-wide:var(--true);} [data-prefix="single_page"] [class*="ct-container"] > article[class*="post"] {--has-boxed:var(--false);--has-wide:var(--true);}@media (max-width: 999.98px) {[data-header*="type-1"] .ct-header [data-row*="middle"] {--height:70px;} [data-header*="type-1"] [data-id="mobile-menu"] {--items-vertical-spacing:10px;} [data-header*="type-1"] #offcanvas {--side-panel-width:65vw;} [data-header*="type-1"] [data-id="trigger"] {--icon-color:#ffffff;} [data-header*="type-1"] {--header-height:70px;} [data-footer*="type-1"] .ct-footer [data-row*="bottom"] > div {--grid-template-columns:initial;} [data-footer*="type-1"] .ct-footer [data-row*="middle"] > div {--container-spacing:50px;--grid-template-columns:initial;} [data-prefix="categories"] .entries {--grid-template-columns:repeat(2, minmax(0, 1fr));} [data-prefix="author"] .entries {--grid-template-columns:repeat(2, minmax(0, 1fr));} [data-prefix="search"] .entries {--grid-template-columns:repeat(2, minmax(0, 1fr));}:root {--content-vertical-spacing:60px;}}@media (max-width: 689.98px) {[data-header*="type-1"] #offcanvas {--side-panel-width:90vw;} [data-footer*="type-1"] .ct-footer [data-row*="bottom"] > div {--container-spacing:15px;--grid-template-columns:initial;} [data-footer*="type-1"] .ct-footer [data-row*="middle"] > div {--container-spacing:40px;--grid-template-columns:initial;} [data-prefix="blog"] .entry-card .entry-title {--fontSize:18px;} [data-prefix="categories"] .entries {--grid-template-columns:repeat(1, minmax(0, 1fr));} [data-prefix="categories"] .entry-card .entry-title {--fontSize:18px;} [data-prefix="author"] .entries {--grid-template-columns:repeat(1, minmax(0, 1fr));} [data-prefix="author"] .entry-card .entry-title {--fontSize:18px;} [data-prefix="search"] .entries {--grid-template-columns:repeat(1, minmax(0, 1fr));} [data-prefix="search"] .entry-card .entry-title {--fontSize:18px;}:root {--content-vertical-spacing:50px;}}</style>
+<link rel="icon" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png" sizes="32x32">
+<link rel="icon" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png">
+<meta name="msapplication-TileImage" content="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png">
+	</head>
+
+<body class="page-template-default page page-id-38 wp-custom-logo wp-embed-responsive ct-loading" data-link="type-2" data-prefix="single_page" data-header="type-1" data-footer="type-1" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+<a class="skip-link show-on-focus" href="#main">
+	Skip to content</a>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><div class="ct-drawer-canvas"><div id="offcanvas" class="ct-panel ct-header" data-behaviour="right-side"><div class="ct-panel-inner">
+		<div class="ct-panel-actions">
+			<button class="ct-toggle-close" data-type="type-1" aria-label="Close drawer">
+				<svg class="ct-icon" width="12" height="12" viewbox="0 0 15 15"><path d="M1 15a1 1 0 01-.71-.29 1 1 0 010-1.41l5.8-5.8-5.8-5.8A1 1 0 011.7.29l5.8 5.8 5.8-5.8a1 1 0 011.41 1.41l-5.8 5.8 5.8 5.8a1 1 0 01-1.41 1.41l-5.8-5.8-5.8 5.8A1 1 0 011 15z"></path></svg>
+			</button>
+		</div>
+		<div class="ct-panel-content" data-device="desktop"></div>
+<div class="ct-panel-content" data-device="mobile">
+<nav class="mobile-menu" data-id="mobile-menu" data-interaction="click" data-toggle-type="type-2" aria-label="Off Canvas Menu">
+	<ul id="menu-navigation-1" role="menubar">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205" role="none"><a href="https://bognic.github.io/kemiprogram/balansera-reaktionsformler/" class="ct-menu-link" role="menuitem">Balansera reaktionsformler</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-206" role="none"><a href="https://bognic.github.io/kemiprogram/kemiska-berakningar/" class="ct-menu-link" role="menuitem">Kemiska beräkningar</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-38 current_page_item menu-item-207" role="none"><a href="https://bognic.github.io/kemiprogram/simulera-titrering/" aria-current="page" class="ct-menu-link" role="menuitem">Simulera titrering</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208" role="none"><a href="https://bognic.github.io/kemiprogram/om-programmet/" class="ct-menu-link" role="menuitem">Om programmet</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209" role="none"><a href="https://bognic.github.io/kemiprogram/ladda-ned/" class="ct-menu-link" role="menuitem">Ladda ned</a></li>
+</ul></nav>
+
+</div>
+</div></div></div>
+<div id="main-container">
+	<header id="header" class="ct-header" data-id="type-1" itemscope="" itemtype="https://schema.org/WPHeader"><div data-device="desktop"><div data-row="middle" data-column-set="2"><div class="ct-container-fluid">
+<div data-column="start" data-placements="1"><div data-items="primary">
+<div class="site-branding" data-id="logo" data-logo="left" itemscope="itemscope" itemtype="https://schema.org/Organization">
+
+			<a href="https://bognic.github.io/kemiprogram/" class="site-logo-container" rel="home"><img width="1153" height="1112" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png" class="default-logo" alt="Ikon"></a>	
+			<div class="site-title-container">
+							<span class="site-title " itemprop="name">
+					<a href="https://bognic.github.io/kemiprogram/" rel="home" itemprop="url">
+						Kemiprogram					</a>
+				</span>
+			
+					</div>
+	  </div>
+
+</div></div>
+<div data-column="end" data-placements="1"><div data-items="primary">
+<nav id="header-menu-2" class="header-menu-2" data-id="menu-secondary" data-interaction="hover" data-menu="type-1" data-dropdown="type-1:simple" data-stretch data-responsive="no" itemscope="" itemtype="https://schema.org/SiteNavigationElement" aria-label="Header Menu">
+
+	<ul id="menu-navigation" class="menu" role="menubar">
+<li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205" role="none"><a href="https://bognic.github.io/kemiprogram/balansera-reaktionsformler/" class="ct-menu-link" role="menuitem">Balansera reaktionsformler</a></li>
+<li id="menu-item-206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-206" role="none"><a href="https://bognic.github.io/kemiprogram/kemiska-berakningar/" class="ct-menu-link" role="menuitem">Kemiska beräkningar</a></li>
+<li id="menu-item-207" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-38 current_page_item menu-item-207" role="none"><a href="https://bognic.github.io/kemiprogram/simulera-titrering/" aria-current="page" class="ct-menu-link" role="menuitem">Simulera titrering</a></li>
+<li id="menu-item-208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208" role="none"><a href="https://bognic.github.io/kemiprogram/om-programmet/" class="ct-menu-link" role="menuitem">Om programmet</a></li>
+<li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209" role="none"><a href="https://bognic.github.io/kemiprogram/ladda-ned/" class="ct-menu-link" role="menuitem">Ladda ned</a></li>
+</ul></nav>
+
+</div></div>
+</div></div></div>
+<div data-device="mobile"><div data-row="middle" data-column-set="2"><div class="ct-container-fluid">
+<div data-column="start" data-placements="1"><div data-items="primary">
+<div class="site-branding" data-id="logo" data-logo="left" itemscope="itemscope" itemtype="https://schema.org/Organization">
+
+			<a href="https://bognic.github.io/kemiprogram/" class="site-logo-container" rel="home"><img width="1153" height="1112" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/icon.png" class="default-logo" alt="Ikon"></a>	
+			<div class="site-title-container">
+							<span class="site-title " itemprop="name">
+					<a href="https://bognic.github.io/kemiprogram/" rel="home" itemprop="url">
+						Kemiprogram					</a>
+				</span>
+			
+					</div>
+	  </div>
+
+</div></div>
+<div data-column="end" data-placements="1"><div data-items="primary">
+<button data-toggle-panel="#offcanvas" class="ct-header-trigger ct-toggle " data-design="simple" data-label="right" aria-label="Open off canvas" data-id="trigger">
+
+	<span class="ct-label ct-hidden-sm ct-hidden-md ct-hidden-lg">Menu</span>
+
+	<svg class="ct-icon" width="18" height="14" viewbox="0 0 18 14" aria-hidden="true" data-type="type-1">
+
+		<rect y="0.00" width="18" height="1.7" rx="1"></rect>
+		<rect y="6.15" width="18" height="1.7" rx="1"></rect>
+		<rect y="12.3" width="18" height="1.7" rx="1"></rect>
+	</svg>
+</button>
+</div></div>
+</div></div></div></header>
+	<main id="main" class="site-main hfeed">
+
+		
+	<div class="ct-container-full" data-content="narrow" data-vertical-spacing="top:bottom">
+
+		
+		
+	<article id="post-38" class="post-38 page type-page status-publish hentry">
+
+		
+<div class="hero-section" data-type="type-1">
+			<header class="entry-header">
+			<h1 class="page-title" title="Simulera titrering" itemprop="headline">Simulera titrering</h1>		</header>
+	</div>
+
+		
+		
+		<div class="entry-content">
+			
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/12-1024x576.png" alt="Simulera titrering, huvudmeny" class="wp-image-118" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/12-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/12-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/12-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/12.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 1. Simulera titrering utan inmatning.</figcaption></figure>
+
+
+
+<p>Programmet kan simulera en syrabastitrering, där en titrerkurva skapas för en teoretisk titrering med syror och baser.</p>
+
+
+
+<h3>Instruktioner</h3>
+
+
+
+<p>Titranden, ämnet som undersökds, och titratorn, ämnet som blandas med titranden i små portioner, läggs till genom att klicka på respektive knapp.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/13-1024x576.png" alt="Lägg till en syra eller bas" class="wp-image-119" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/13-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/13-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/13-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/13.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 2. Ättiksyra HAc (egentligen CH<sub>3</sub>COOH) läggs till.</figcaption></figure>
+
+
+
+<p>Ämnets kemiska formel skrivs jämte &#8220;Formel&#8221;. Om syran eller basen är känd, hämtas dess syra- eller baskonstant automatiskt från en inbyggd databas, inklusive för flerprotoniga syror och baser där flera konstanter används. Konstanerna kan ändras av användaren. Standardinställningen för titranden är att den är syra och för titratorn att den är en bas, vilket kan ändras genom att klicka på &#8220;Protongivare&#8221; eller &#8220;Protontagare&#8221;. Det är <em>inte </em>tillåtet att använda både en sur eller basisk titrand och titrator. Undantag är när titranden eller titratorn är en amfolyt, det vill säga kan reagera både surt och basiskt.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/15-1024x576.png" alt="Simulerad titrering av H3PO4 och NH3" class="wp-image-120" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/15-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/15-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/15-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/15.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 3. Titrerkurva av fosforsyra H<sub>3</sub>PO<sub>4</sub> titrerad med ammoniak NH<sub>3</sub>.</figcaption></figure>
+
+
+
+<p>Sedan matas övrig data in.</p>
+
+
+
+<ul>
+<li>
+<strong>Koncentration </strong>anges i mol/dm<sup>3</sup> och krävs för såväl titranden som titratorn. Angående titranden avses dess koncentration före titrering.</li>
+
+
+
+<li>
+<strong>Volym </strong>anges i dm<sup>3</sup> och krävs för titranden, alltså dess volym före titrering.</li>
+
+
+
+<li>
+<strong>Noggrannhet </strong>är en inställning som bestämmer antalet punkter som skapas vid simuleringen. <em>Normal </em>innebär att minst 4000 punkter skapas, medan <em>Hög </em>och <em>Mycket hög </em>leder till att minst 10 000 respektive 20 000 punkter skapas. Värdet för <em>Mycket hög </em>kan ändras genom att starta programmet med argumentet <code>--titration-limit=&lt;värde&gt;</code>, där <code>&lt;värde&gt;</code> anger antalet punkter, som måste vara större än 100.</li>
+
+
+
+<li>
+<strong>pK<sub>w</sub></strong> står för den negativa tiologaritmen av vattnets protolyskonstant. Standardvärdet är 14, eftersom K<sub>w</sub> = 10<sup>-14</sup> (mol/dm<sup>3</sup>)<sup>2</sup> vid 25 grader C och pK<sub>w</sub> = -log<sub>10</sub>(10<sup>-14</sup>) = 14.</li>
+
+
+
+<li>
+<strong>Antal decimaler </strong>reglerar avrundning av bland annat pH vid olika tillfällen vid titreringen.</li>
+
+
+
+<li>En <strong>indikator </strong>kan visas bakom titrerkurvan, där dess färger täcker relevanta pH-intervall. Alternativen är bromtymolblått BTB, fenolftalein FFT och metylorange MO. En simulering måste köras igen om indikatorn ändras, för att visa den.</li>
+</ul>
+
+
+
+<p>Simuleringen påbörjas genom att klicka på &#8220;Beräkna&#8221;. Grafen som visas har pH på y-axeln och volymen av titratorn i dm<sup>3</sup> på x-axeln. Muspekaren kan hållas över markerade punkter på kurvan, där pH-värdet i den punkten visas. Observera att max 7000 punkter visas, även om fler skapas. Grafen måste då exporteras för att se alla punkter.</p>
+
+
+
+<p>Den tid det tog att skapa alla punkter anges jämte &#8220;Förfluten tid&#8221;, enligt formatet dd:hh:ss.µs (dagar, timmar, sekunder, mikrosekunder). Volymen av titratorn som krävdes för fullständig neutralisation anges jämte &#8220;Tillförd V(titrator)&#8221; i dm<sup>3</sup>. Slutligen kan titrerkurvan exporteras till ett kalkylark i Excel-format (.xlsx). Observera att filen alltid sparas i samma mapp med den exekverbara filen.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/16-1024x576.png" alt="Simulerad titrering av H3PO4 och NH3, BTB" class="wp-image-121" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/16-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/16-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/16-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/16.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 4. Titrerkurva av fosforsyra H<sub>3</sub>PO<sub>4</sub> titrerad med ammoniak NH<sub>3</sub>. BTB används som indikator.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/17-1024x576.png" alt="Simulerad titrering av H3PO4 och NH3, FFT" class="wp-image-122" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/17-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/17-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/17-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/17.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 5. Titrerkurva av fosforsyra H<sub>3</sub>PO<sub>4</sub> titrerad med ammoniak NH<sub>3</sub>. FFT används som indikator.</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="576" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/18-1024x576.png" alt="Simulerad titrering av H3PO4 och NH3, MO" class="wp-image-123" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/18-1024x576.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/18-300x169.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/18-768x432.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/18.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Bild 6. Titrerkurva av fosforsyra H<sub>3</sub>PO<sub>4</sub> titrerad med ammoniak NH<sub>3</sub>. MO används som indikator.</figcaption></figure>
+
+
+
+<h3>Hur fungerar det?</h3>
+
+
+
+<h4>Bakgrund</h4>
+
+
+
+<p>Om vi backar bandet lite och tänker på vad som sker vid en syrabastitrering, så är det en reaktion mellan en syra och en bas. Vid själva titreringen finns det olika mycket av respektive syra och bas vid olika tidpunkter, beroende på volymen av den tillsatta titratorn. Volymen blir x-värdet, medan pH blir y-värdet. Vi behöver alltså en slags funktion som beskriver pH som funktion av volymen.</p>
+
+
+
+<p>Antag att det som titreras, titranden, är saltsyra HCl. HCl är en stark syra och protolyseras fullständigt i vatten enligt följande reaktionsformel.</p>
+
+
+
+<p><strong>HCl + H<sub>2</sub>O → Cl<sup>&#8211;</sup> + H<sub>3</sub>O<sup>+</sup></strong></p>
+
+
+
+<p>Molförhållandena är 1:1 över lag. Sedan löses en stark bas, exempelvis natriumhydroxid NaOH i samma lösning.</p>
+
+
+
+<p><strong>NaOH → Na<sup>+</sup> + OH<sup>&#8211;</sup></strong></p>
+
+
+
+<p>Då sker följande neutralisationsreaktion mellan HCl och NaOH.</p>
+
+
+
+<p><strong>HCl + NaOH → NaCl + H<sub>2</sub>O</strong></p>
+
+
+
+<p>Startkoncentrationen HCl, [HCl], och volymen HCl, V(HCl), är kända. Dessutom känner vi till koncentrationen NaOH, [NaOH]. Då blir dess volym variabeln. Molförhållandet mellan HCl och NaOH är 1:1. Detta innebär att substansmängden för respektive ämne kan beräknas. Substansmängden HCl minskar enligt följande samband, där V(NaOH) motsvarar den volymen NaOH som har tillsatts.</p>
+
+
+
+<p><strong>n<sub>efter</sub>(HCl) = n<sub>före</sub>(HCl) &#8211; n(NaOH) = [HCl] * V(HCl) &#8211; [NaOH] * V(NaOH)</strong></p>
+
+
+
+<p>Därefter kan den nya koncentrationen HCl beräknas.</p>
+
+
+
+<p><strong>[HCl]<sub>2</sub> = n<sub>efter</sub>(HCl) / V<sub>tot</sub> = n<sub>efter</sub>(HCl) / (V(HCl) + V(NaOH))</strong></p>
+
+
+
+<p>Utifrån den kan [H<sub>3</sub>O<sup>+</sup>] och därmed pH beräknas vid den punkten på grafen, där V(NaOH) motsvarar x-värdet och pH y-värdet.</p>
+
+
+
+<p><strong>pH = -log<sub>10</sub>([H<sub>3</sub>O<sup>+</sup>]) = -log<sub>10</sub>([HCl]<sub>2</sub>)</strong></p>
+
+
+
+<p>Det finns dock flera problem med ovanstående metod. Vad händer när tillräckligt mycket NaOH tillsätts så HCl tar slut? Då blir n(HCl) negativ. Visserligen är HCl inte lika intressant när det har tagit slut. Ett villkor kan då läggas in i programmet då n(HCl) motsvarar n(NaOH) och därefter räkna ut [NaOH] med dess volym och saltsyrans initiella volym. Eftersom NaOH är en bas, räknas pH ut enligt sambandet mellan pH och pOH. Men räcker det?</p>
+
+
+
+<p>Ett annat problem uppstår vid tillräckligt låga koncentrationer. Om [HCl] är till exempel 10<sup>-8</sup> mol/dm<sup>3</sup>, vad blir pH? Enligt definitionen bör pH bli -log(10<sup>-8</sup>) = 8. Kan en saltsyra lösning vara basisk? Nej! Dessutom blir beräkningarna mycket mer komplexa vid inblandning av svaga <em>enprotoniga</em> syror och baser, för att inte nämna flerprotoniga syror och baser.</p>
+
+
+
+<figure class="wp-block-image size-full is-style-default"><img decoding="async" loading="lazy" width="808" height="298" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/prototyp1.png" alt="Titrerkurva HAc NaOH prototyp" class="wp-image-56" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/prototyp1.png 808w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/prototyp1-300x111.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/prototyp1-768x283.png 768w" sizes="(max-width: 808px) 100vw, 808px"><figcaption class="wp-element-caption">En gammal version av programmet genererade denna titrerkurva, med användning av bland annat buffertformeln och kemiska beräkningar. Lägg märke till ett &#8220;hopp&#8221; precis i början.</figcaption></figure>
+
+
+
+<h4>Nya metoder</h4>
+
+
+
+<p>I stället för att beräkna nya koncentrationer med reaktionsformler, kan andra samband utnyttjas. Det ena sambandet är laddningsbalans. Laddningsbalans för ovanstående situation tecknas enligt följande och betyder att alla laddningar i lösningen tar ut varandra, för en lösning ska i helhet vara neutral. Då måste summan av alla positiva laddningar motsvara summan av alla negativa laddningar. </p>
+
+
+
+<p><strong>[Na<sup>+</sup>] + [H<sub>3</sub>O<sup>+</sup>] = [Cl<sup>&#8211;</sup>] + [OH<sup>&#8211;</sup>]</strong></p>
+
+
+
+<p>Enligt reaktionsformlerna framgår det att molförhållandet över lag är 1:1, vilket innebär att vi kan göra följande substitutioner.</p>
+
+
+
+<p><strong>[NaOH] + [H<sub>3</sub>O<sup>+</sup>] = [HCl] + [OH<sup>&#8211;</sup>]</strong></p>
+
+
+
+<p>Koncentrationen NaOH och HCl känner vi till då de motsvarar titrandens eller titratorns koncentrationer, men hur blir det med oxonium- och hydroxidjonerna? I en vattenlösning sker något som heter autoprotolys, vilket kortfattat innebär att vi kan ställa upp ett samband mellan oxonium- och hydroxidjonerna med konstanten K<sub>w</sub>, som har värdet 10<sup>-14</sup> vid 25 °C.</p>
+
+
+
+<p><strong>K<sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>] * [OH<sup>&#8211;</sup>] = 1,0 * 10<sup>-14</sup> (mol/dm<sup>3</sup>)<sup>2</sup></strong></p>
+
+
+
+<p>Nu kan OH<sup>&#8211;</sup> lösas ut och sättas in i uttrycket för laddningsbalans. H<sub>3</sub>O<sup>+</sup> blir den obekanta.</p>
+
+
+
+<p><strong>[NaOH] + [H<sub>3</sub>O<sup>+</sup>] = [HCl] + K<sub>w</sub> / [H<sub>3</sub>O<sup>+</sup>]</strong></p>
+
+
+
+<p>Efter omskrivningar erhålls en andragradsekvation, som i detta fall kan lösas med pq-formeln. Vi är bara intresserade av den positiva roten, så därför faller minustecknet bort. Definitionen för pH är den negativa tiologaritmen av koncentrationen oxoniumjoner i en lösning. Den fullständiga härledningen finns längre ner i filen &#8220;Stark syra + stark bas&#8221;.</p>
+
+
+
+<p>Detta funkar för starka syror och baser, men hur blir det om vi blandar in svaga syror och baser med flera protolyssteg? Härledningar kan göras för mer komplicerade situationer, såsom titrering med en svag tvåprotonig syra med en svag enprotonig bas. Då erhålls en femtegradsekvation. Hur ska denna lösas? En lämplig metod är Newton-Raphson metoden, där en ekvations approximativa rot bestäms genom en iterativ process. Den inleds med en gissning, x<sub>n</sub>, som subtraheras med kvoten av ett funktionsvärde dividerat med funktionens derivata. X<sub>n+1</sub> blir sedan nya x<sub>n</sub>. Fler iterationer innebär bättre värden på roten. Föregående ekvation kan skrivas på detta sätt, där a, b, c, d, e är koefficienterna framför den obekanta x, alltså koncentrationen, och f blir en konstant, vilket ger en enkel derivering. Så här ser det ut översatt till kod för femtegradsekvationer, där antalet iterationer har satts till hundra. Sedan beräknas pH som vanligt.</p>
+
+
+
+<h3>Härledningar av titreringsekvationer</h3>
+
+
+
+<p>Nedanstående dokument innehåller härledningar av alla ekvationer som används i programmet under simulering av titrering. Index 1 betyder koncentration före jämvikt (den kända koncentrationen), medan index 2 betyder koncentration vid jämvikt.</p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-60011cc1-3778-4412-9867-85d8fc4c9b6c" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/SA-SB.pdf">Stark syra + stark bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-9fc08926-4424-470a-b249-421ead7268da" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA1-SB.pdf">Svag enprotonig syra + stark bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-4b8184f7-fa27-486e-b323-5d466730a7a9" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA1-WB1.pdf">Svag enprotonig syra + svag enprotonig bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-f824d02d-97c6-4f6f-b419-e0933680557d" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2-SB.pdf">Svag tvåprotonig syra + stark bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-dd0b6416-db40-46e0-8eff-ac9d19a45d4a" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2-WB1.pdf">Svag tvåprotonig syra + svag enprotonig bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-6f058dee-c56c-4f24-8ae4-2a3e0caf3e6e" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2a-SA.pdf">Amfolyt + stark syra</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-9942dd66-ddb7-43c3-ae01-0f597d8af571" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2a-SB.pdf">Amfolyt + stark bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-5a739911-750e-405f-9822-0689f092faa8" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2a-WA1.pdf">Amfolyt + svag enprotonig syra</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-556e8111-3cdc-4c88-ad37-9e74df1c4586" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA2a-WB1.pdf">Amfolyt + svag enprotonig bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-2ebbefd6-8e9a-4fe5-8cad-436ae6ae5707" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA3-SB.pdf">Svag treprotonig + stark bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-5f6df932-eb43-466c-83be-0a8950157ac7" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WA3-WB1.pdf">Svag treprotonig syra + svag enprotonig bas</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-a3e30d49-842f-440c-9988-4ab018e4779a" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WB1-SA.pdf">Svag enprotonig bas + stark syra</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-d4aa9fbd-1a09-4a8c-afea-5feb522ea426" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WB2-SA.pdf">Svag tvåprotonig bas + stark syra</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-ee381dde-c831-4be3-b8cc-9bc55586f0f8" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/WB2-WA1.pdf">Svag tvåprotonig bas + svag enprotonig syra</a></div>
+
+
+
+<h3>Laborationer</h3>
+
+
+
+<p>Några syrabastitreringar genomfördes på Sunnerbogymnasiet. Alla resultat finner du i nedanstående kalkylark.</p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-008e2ebc-c626-45f6-99b1-d050e3e0f306" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/11/HAc-NaOH-kurvor-jmf.xlsx">HAc och NaOH</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-22f11dcd-9834-41d7-8c94-bff0fc4d7357" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/H3PO4-NaOH-kurvor-jmf.xlsx">H<sub>3</sub>PO<sub>4</sub> och NaOH</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-fe430506-1dcc-4f35-8ebb-fcd400d97609" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/NH3-HCl-kurvor-jmf.xlsx">NH<sub>3</sub> och HCl</a></div>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-3945a789-0afd-4b0f-bb38-1e4058daa697" href="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/12/NaHCO3-HCl-kurvor-jmf.xlsx">NaHCO<sub>3</sub> HCl</a></div>
+		</div>
+
+		
+		
+		
+		
+	</article>
+
+	
+		
+			</div>
+
+	</main>
+
+	<footer id="footer" class="ct-footer" data-id="type-1" itemscope="" itemtype="https://schema.org/WPFooter"><div data-row="middle"><div class="ct-container">
+<div data-column="widget-area-1">
+<div class="ct-widget widget_block" id="block-9">
+<div class="is-layout-flex wp-container-3 wp-block-columns">
+<div class="is-layout-flow wp-block-column"></div>
+
+
+
+<div class="is-layout-flow wp-block-column"></div>
+</div>
+</div>
+<div class="ct-widget widget_block widget_media_image" id="block-13">
+<figure class="wp-block-image size-large is-resized"><a href="https://godotengine.org/" target="_blank" rel=" noreferrer noopener"><img decoding="async" loading="lazy" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-1024x414.png" alt="Godot Engine" class="wp-image-26" width="278" height="112" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-1024x414.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-300x121.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-768x310.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-1536x621.png 1536w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-2048x828.png 2048w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/logo_large_color_dark-1530x619.png 1530w" sizes="(max-width: 278px) 100vw, 278px"></a></figure>
+</div>
+</div>
+<div data-column="widget-area-2"><div class="ct-widget widget_block widget_media_image" id="block-14">
+<figure class="wp-block-image size-large is-resized"><a href="https://www.ljungby.se/sv/forskola-och-skola/sunnerbogymnasiet/" target="_blank" rel=" noreferrer noopener"><img decoding="async" loading="lazy" src="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod-1024x669.png" alt="Sunnerbogymnasiet" class="wp-image-25" width="256" height="167" srcset="https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod-1024x669.png 1024w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod-300x196.png 300w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod-768x502.png 768w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod-1171x765.png 1171w, https://bognic.github.io/kemiprogram/wp-content/uploads/2022/10/Sunnerbo-vit-rod.png 1289w" sizes="(max-width: 256px) 100vw, 256px"></a></figure>
+</div></div>
+</div></div>
+<div data-row="bottom"><div class="ct-container" data-columns-divider="md:sm"><div data-column="copyright">
+<div class="ct-footer-copyright" data-id="copyright">
+
+	<p>Copyright © 2022 - Bogdan Nicoara</p>
+</div>
+</div></div></div></footer>
+</div>
+
+<style id="core-block-supports-inline-css">.wp-block-columns.wp-container-3{flex-wrap:nowrap;}</style>
+<script id="ct-scripts-js-extra">var ct_localizations = {"ajax_url":"https:\/\/bognic.github.io\/kemiprogram\/wp-admin\/admin-ajax.php","nonce":"0d0379d164","public_url":"https:\/\/bognic.github.io\/kemiprogram\/wp-content\/themes\/blocksy\/static\/bundle\/","rest_url":"https:\/\/bognic.github.io\/kemiprogram\/wp-json\/","search_url":"https:\/\/bognic.github.io\/kemiprogram\/search\/QUERY_STRING\/","show_more_text":"Show more","more_text":"More","search_live_results":"Search results","search_live_no_result":"No results","search_live_one_result":"You got %s result. Please press Tab to select it.","search_live_many_results":"You got %s results. Please press Tab to select one.","expand_submenu":"Expand dropdown menu","collapse_submenu":"Collapse dropdown menu","dynamic_js_chunks":[],"dynamic_styles":{"lazy_load":"https:\/\/bognic.github.io\/kemiprogram\/wp-content\/themes\/blocksy\/static\/bundle\/non-critical-styles.min.css","search_lazy":"https:\/\/bognic.github.io\/kemiprogram\/wp-content\/themes\/blocksy\/static\/bundle\/non-critical-search-styles.min.css"},"dynamic_styles_selectors":[{"url":null}]};</script>
+<script src="https://bognic.github.io/kemiprogram/wp-content/themes/blocksy/static/bundle/main.js?ver=1.8.61" id="ct-scripts-js"></script>
+<script src="https://bognic.github.io/kemiprogram/wp-includes/blocks/file/view.min.js?ver=2a20786ca914ea00891f" id="wp-block-file-view-js"></script>
+
+</body>
+</html>
